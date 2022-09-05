@@ -14,12 +14,8 @@ toggle.addEventListener("change", function () {
 
 function startUp() {
   chrome.storage.sync.get("state", function (data) {
-    noCheck(data.state);
+    toggle.checked = data.state;
   });
-}
-
-function noCheck(status) {
-  toggle.checked = status;
 }
 
 startUp();
