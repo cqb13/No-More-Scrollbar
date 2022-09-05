@@ -12,7 +12,6 @@ toggle.addEventListener("change", function () {
   chrome.storage.sync.get(["state", "show"], function (data) {
     var state = data.state;
     var show = data.show;
-    console.log(show);
     if (state == false) {
       state = true;
     } else if (state == true) {
