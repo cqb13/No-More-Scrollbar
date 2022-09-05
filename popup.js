@@ -9,18 +9,18 @@ const info = {
 };
 
 toggle.addEventListener("change", function () {
-  chrome.storage.sync.get(["state"], function (data) {
-    var state = data.state;
+  chrome.storage.sync.get(["stateNMS"], function (data) {
+    var state = data.stateNMS;
 
     if (state == false) {
       state = true;
     } else if (state == true) {
       state = false;
     }
-    chrome.storage.sync.set({ state: state });
+    chrome.storage.sync.set({ stateNMS: state });
 
-    chrome.storage.sync.get("showNotification", function (data) {
-      if (data.showNotification != false) {
+    chrome.storage.sync.get("showNotificationNMS", function (data) {
+      if (data.showNotificationNMS != false) {
         chrome.notifications.create(info);
         chrome.notifications.onButtonClicked.addListener(notAgain);
       }
@@ -30,12 +30,12 @@ toggle.addEventListener("change", function () {
 
 function notAgain() {
   var show = false;
-  chrome.storage.sync.set({ showNotification: show });
+  chrome.storage.sync.set({ showNotificationNMS: show });
 }
 
 function startUp() {
-  chrome.storage.sync.get("state", function (data) {
-    toggle.checked = data.state;
+  chrome.storage.sync.get("stateNMS", function (data) {
+    toggle.checked = data.stateNMS;
   });
 }
 
