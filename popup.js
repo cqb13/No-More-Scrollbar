@@ -9,26 +9,27 @@ const info = {
 };
 
 toggle.addEventListener("change", function () {
-  chrome.storage.sync.get("state", function (data) {
+  chrome.storage.sync.get(["state", "show"], function (data) {
     var state = data.state;
+    var show = data.show;
+    console.log(show);
     if (state == false) {
       state = true;
     } else if (state == true) {
       state = false;
     }
     chrome.storage.sync.set({ state: state });
-    chrome.storage.sync.get("showNotification", function (data) {
-      if (data.show != false) {
-        chrome.notifications.create(info);
-        chrome.notifications.onButtonClicked.addListener(notAgain);
-      }
-    });
+    chrome.storage.sync.set({ show: show });
+    if (show != false) {
+      chrome.notifications.create(info);
+      chrome.notifications.onButtonClicked.addListener(notAgain(show));
+    }
   });
 });
 
-function notAgain() {
-  var show = false;
-  chrome.storage.sync.set({ showNotification: show });
+function notAgain(show) {
+  show = false;
+  chrome.storage.sync.set({ show: show });
 }
 
 function startUp() {
