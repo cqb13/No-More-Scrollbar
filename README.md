@@ -23,7 +23,3 @@ _Note: This only works in chrome_
 ## Features
 
 - Hides annoying scrollbar on most websites
-
-## Todo
-
-- Toggle hide scrollbar on and off
