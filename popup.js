@@ -41,7 +41,8 @@ function startUp() {
       toggle.checked = true
       chrome.storage.sync.set({ firstNMS: run })
     } else {
-      toggle.checked = data.stateNMS;
+      // remove ! and add a check in poof.js for first run (needs to detect state on first run to fix switch)
+      toggle.checked = !data.stateNMS;
     }
   });
 }

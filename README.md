@@ -26,5 +26,4 @@ _Note: This only works in chrome_
 
 ## Todo
 
-- on is off and off is on??? (issue with save)
 - maybe fix dont ask again popup (more testing needed)
