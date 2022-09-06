@@ -23,3 +23,7 @@ _Note: This only works in chrome_
 ## Features
 
 - Hides annoying scrollbar on most websites
+
+## Todo
+
+- maybe fix dont ask again popup (more testing needed)
