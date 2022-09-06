@@ -12,7 +12,7 @@ toggle.addEventListener("change", function () {
   chrome.storage.sync.get(["stateNMS"], function (data) {
     var state = data.stateNMS;
 
-    if (state == false) {
+    if (state == false || state == null) {
       state = true;
     } else {
       state = false;
@@ -33,9 +33,16 @@ function notAgain() {
   chrome.storage.sync.set({ showNotificationNMS: show });
 }
 
+// something is very wrong with this
 function startUp() {
-  chrome.storage.sync.get("stateNMS", function (data) {
-    toggle.checked = data.stateNMS;
+  chrome.storage.sync.get(["stateNMS", "firstNMS"], function (data) {
+    if (data.firstNMS != true) {
+      var run = true
+      toggle.checked = true
+      chrome.storage.sync.set({ firstNMS: run })
+    } else {
+      toggle.checked = data.stateNMS;
+    }
   });
 }
 

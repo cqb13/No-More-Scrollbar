@@ -26,5 +26,5 @@ _Note: This only works in chrome_
 
 ## Todo
 
-- fix switch state on start up (should be on, is off)
+- on is off and off is on??? (issue with save)
 - maybe fix dont ask again popup (more testing needed)

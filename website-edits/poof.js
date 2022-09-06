@@ -1,8 +1,9 @@
 var style = document.createElement("style");
 var amount = 0;
 
-chrome.storage.sync.get("stateNMS", function (data) {
-  var visible = !data.stateNMS;
+chrome.storage.sync.get(["stateNMS", "firstNMS"], function (data) {
+  // result of bad code
+  var visible = data.stateNMS;
 
   if (visible == false) {
     HideScrollbar();
