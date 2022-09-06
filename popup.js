@@ -12,9 +12,9 @@ toggle.addEventListener("change", function () {
   chrome.storage.sync.get(["stateNMS"], function (data) {
     var state = data.stateNMS;
 
-    if (state == false || state == null) {
+    if (state == false) {
       state = true;
-    } else if (state == true) {
+    } else {
       state = false;
     }
     chrome.storage.sync.set({ stateNMS: state });
