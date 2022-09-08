@@ -33,15 +33,13 @@ function notAgain() {
   chrome.storage.sync.set({ showNotificationNMS: show });
 }
 
-// something is very wrong with this
 function startUp() {
   chrome.storage.sync.get(["stateNMS", "firstNMS"], function (data) {
     if (data.firstNMS != true) {
-      var run = true
-      toggle.checked = true
-      chrome.storage.sync.set({ firstNMS: run })
+      var run = true;
+      toggle.checked = true;
+      chrome.storage.sync.set({ firstNMS: run });
     } else {
-      // remove ! and add a check in poof.js for first run (needs to detect state on first run to fix switch)
       toggle.checked = !data.stateNMS;
     }
   });
