@@ -17,6 +17,11 @@ toggle.addEventListener("change", function () {
     } else {
       state = false;
     }
+
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+      chrome.tabs.reload(tabs[0].id);
+    });
+    
     chrome.storage.sync.set({ stateNMS: state });
 
     chrome.storage.sync.get("showNotificationNMS", function (data) {
