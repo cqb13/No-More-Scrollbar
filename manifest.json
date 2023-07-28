@@ -1,10 +1,10 @@
 {
-  "name": "No More Scrollbars",
-  "description": "Scroll bars can be very annoying. Some look bad, some dont fit correctly, and some dont go away. This extension solves all of annoying problems with scrollbars, because it removes them!",
+  "name": "No More Scrollbar",
+  "description": "Removes annoying Scrollbar's!",
   "version": "0.0.5",
   "manifest_version": 3,
 
-  "permissions": ["storage", "activeTab", "scripting", "notifications"],
+  "permissions": ["storage", "notifications"],
 
   "content_scripts": [
     {
@@ -15,7 +15,7 @@
   ],
 
   "action": {
-    "default_title": "No More Scrollbars",
+    "default_title": "No More Scrollbar",
     "default_popup": "popup.html",
     "default_icon": {
       "16": "/images/icon16.png",
