@@ -8,6 +8,6 @@ chrome.storage.sync.get(["stateNMS", "firstNMS"], function (data) {
 });
 
 function HideScrollbar() {
-  style.innerHTML = `body::-webkit-scrollbar {display: none;}`;
+  style.innerHTML = `*::-webkit-scrollbar {display: none;}`;
   document.head.appendChild(style);
 }
