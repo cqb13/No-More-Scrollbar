@@ -16,7 +16,7 @@ function HideScrollbar() {
 
 function ShowScrollbar() {
   style.innerHTML = `
-    *::-webkit-scrollbar {width: 10px;}
+    *::-webkit-scrollbar {width: 5px;}
     *::-webkit-scrollbar-track {background: #00000000;}
     *::-webkit-scrollbar-thumb {background: #496bbe4d;}
     *::-webkit-scrollbar-thumb:hover {background: #496bbeb3;}`;
